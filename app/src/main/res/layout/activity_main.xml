@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <com.quy.hc05.TouchableButton
+            android:id="@+id/btn_up"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_above="@+id/btn_down"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/border"
+            android:fontFamily="sans-serif-black"
+            android:text="UP"
+            android:textAllCaps="false"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/warning"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_above="@+id/btn_down"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="40dp"
+            android:visibility="invisible"
+            android:src="@drawable/ic_baseline_warning_amber_24"
+            app:tint="#EA0C0C" />
+
+        <com.quy.hc05.TouchableButton
+            android:id="@+id/btn_down"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border1"
+            android:fontFamily="sans-serif-black"
+            android:text="Down"
+            android:textAllCaps="false"
+            android:textSize="22sp" />
+
+        <com.quy.hc05.TouchableButton
+            android:id="@+id/btn_left"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toStartOf="@+id/btn_right"
+            android:background="@drawable/border2"
+            android:fontFamily="sans-serif-black"
+            android:text="Left"
+            android:textAllCaps="false"
+            android:textSize="22sp" />
+
+        <com.quy.hc05.TouchableButton
+            android:id="@+id/btn_right"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border3"
+            android:fontFamily="sans-serif-black"
+            android:text="Right"
+            android:textAllCaps="false"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:id="@+id/layout_value"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Temperature"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Min: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvMinTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="..."
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Max: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvMaxTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="..."
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Humidity"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Min: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvMinHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="..."
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Max: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvMaxHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="..."
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_temp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_toStartOf="@+id/layout_value"
+            android:background="@drawable/border_temp">
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="..."
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="35dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-black"
+                android:text="&#186;C"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/layout_temp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_toStartOf="@+id/layout_value"
+            android:background="@drawable/border_humidity">
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="..."
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="35dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-black"
+                android:text="%"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_toStartOf="@+id/layout_temp"
+            android:layout_toEndOf="@+id/btn_up"
+            android:fontFamily="sans-serif-black"
+            android:text="History"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/list_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/qth_logo"
+            android:layout_below="@+id/txt_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toStartOf="@+id/layout_temp"
+            android:layout_toEndOf="@+id/btn_up"
+            android:background="@drawable/border_list" />
+
+        <ImageView
+            android:id="@+id/add_history"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignEnd="@+id/btn_up"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="-20dp"
+            android:src="@android:drawable/ic_input_add" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/qth_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toStartOf="@+id/btn_left"
+            android:layout_toEndOf="@+id/btn_down"
+            android:src="@drawable/logo" />
+    </RelativeLayout>
+
+
+
+
+<!--    _____________________-->
+
+
+
+    <RelativeLayout
+        android:id="@+id/layout_connect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/car" />
+
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="#131F8C"
+            android:text="Connect"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif-black"
+            android:text="QTH"
+            android:textColor="@color/white"
+            android:textSize="60sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
